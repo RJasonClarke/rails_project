@@ -1,9 +1,7 @@
 <nav>
-    <% if logged_in?%>
     Logged in as: <%= @user.username %>
     <br>
     <%= link_to 'New List', new_list_path%> |
     <%= link_to 'All Lists', lists_path%> |
     <%= link_to 'Logout', logout_path%>
-    <%end%>
 </nav>

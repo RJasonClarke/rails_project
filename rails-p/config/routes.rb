@@ -14,9 +14,12 @@ Rails.application.routes.draw do
   #logout route
   get '/logout', to: 'sessions#destroy'
 
-  resources :categories
   resources :movies
-  resources :users
-  resources :lists
+  resources :users do
+    resources :lists, only: [:new, :create, :index]
+  end
+  resources :lists do
+    resources :movies, only: [:new, :create, :index]
+  end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

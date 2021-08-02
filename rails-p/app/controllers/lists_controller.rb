@@ -14,6 +14,14 @@ class ListsController < ApplicationController
         end
     end
 
+    def index
+        @lists = current_user.lists.all
+    end
+
+    def show
+        @list = List.find_by_id(params[:id])
+    end
+
     private
 
     def list_params
