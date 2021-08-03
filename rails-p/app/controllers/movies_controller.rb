@@ -7,7 +7,7 @@ class MoviesController < ApplicationController
     def create
         @movie = current_user.movies.build(movie_params)
         if @movie.save
-            redirect_to movies_path
+            redirect_to lists_path
         else
             render :new
         end
@@ -22,15 +22,21 @@ class MoviesController < ApplicationController
     end
 
     def show
-        @movie = Movie.find_by(:id params[:id])
+        
     end
 
     def edit
-        @movie = Movie.find_by(:id params[:id])
+        
     end
 
     def update
-        @movie = Movie.find_by(:id params[:id])
+        
+    end
+
+    private
+
+    def movie_params
+        params.require(:movie).permit(:title,:list_id)
     end
 
 end

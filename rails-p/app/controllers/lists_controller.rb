@@ -19,7 +19,7 @@ class ListsController < ApplicationController
     end
 
     def show
-        @list = List.find_by_id(params[:id])
+        @list = List.find(params[:id])
     end
 
     private
