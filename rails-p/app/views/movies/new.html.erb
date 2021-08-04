@@ -1,12 +1,10 @@
 <h1>Add Movie</h1>
 
-<%=form_for(@movie) do |m|%>
-    <%= m.label :list %>
-    <%= m.collection_select :list_id, List.all, :id, :title %>
+<%=form_for(@movie, as: :list_id) do |f|%>
 
-    <%= m.label :title %>
-    <%= m.text_field :title %>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
 
-    <%= m.submit %>
+    <%= f.submit %>
 
 <%end%>

@@ -1,10 +1,10 @@
 <h1><%= @list.title%></h1>
 
 
-<%= link_to 'Add movie', new_movie_path%>
+<%= link_to 'Add movie', new_list_movie_path(@list) %>
 
-<p>
-<%= @list.movies.each do |m|%>
-    <%= m.title %>
+<ol>
+<% @list.movies.each do |m|%>
+    <li><%= m.title %></li>
 <%end%>
-</p>
+</ol>
